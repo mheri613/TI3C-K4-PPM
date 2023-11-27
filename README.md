@@ -1,16 +1,25 @@
-# ti3c_k4_ppm
+# cash control
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tim</title>
+</head>
+<body>
+    <div class="team">
+        <h1>Kelompok 4</h1>
+        <ul class="leadership">
+            <li class="leader">Ketua: Heri Maulana</li>
+        </ul>
+        <ul class="members">
+            <li>Anggota 1: Sahli Kurniawan</li>
+            <li>Anggota 2: Mazaia Ulfa</li>
+            <li>Anggota 2: Mulkiani</li>
+            <!-- Tambahkan anggota lainnya sesuai kebutuhan -->
+        </ul>
+    </div>
+</body>
+</html>
+#

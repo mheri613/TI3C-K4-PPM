@@ -1,5 +1,6 @@
 import 'package:calendar_appbar/calendar_appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:ti3c_k4_ppm/pages/home_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -27,6 +28,7 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: Colors.green, 
         child: Icon(Icons.add),
         ),
+        body: HomePage(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, bottomNavigationBar: BottomAppBar(
           child: 
           Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [

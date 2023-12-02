@@ -25,17 +25,17 @@ class _CategoryPageState extends State<CategoryPage> {
                       fontSize: 18,
                       color: (isExpense) ? Colors.red : Colors.green),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       border: OutlineInputBorder(), hintText: "Name"),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                ElevatedButton(onPressed: () {}, child: Text("Save"))
+                ElevatedButton(onPressed: () {}, child: const Text("Save"))
               ],
             )),
           );
@@ -67,7 +67,7 @@ class _CategoryPageState extends State<CategoryPage> {
                   onPressed: () {
                     openDialog();
                   },
-                  icon: Icon(Icons.add))
+                  icon: const Icon(Icons.add))
             ],
           ),
         ),
@@ -77,17 +77,17 @@ class _CategoryPageState extends State<CategoryPage> {
             elevation: 10,
             child: ListTile(
               leading: (isExpense)
-                  ? Icon(Icons.upload, color: Colors.red)
-                  : Icon(Icons.download, color: Colors.green),
-              title: Text("Sedekah"),
+                  ? const Icon(Icons.upload, color: Colors.red)
+                  : const Icon(Icons.download, color: Colors.green),
+              title: const Text("Sedekah"),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
-                  SizedBox(
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.delete)),
+                  const SizedBox(
                     width: 10,
                   ),
-                  IconButton(onPressed: () {}, icon: Icon(Icons.edit)),
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.edit)),
                 ],
               ),
             ),
@@ -99,17 +99,17 @@ class _CategoryPageState extends State<CategoryPage> {
             elevation: 10,
             child: ListTile(
               leading: (isExpense)
-                  ? Icon(Icons.upload, color: Colors.red)
-                  : Icon(Icons.download, color: Colors.green),
-              title: Text("Sedekah"),
+                  ? const Icon(Icons.upload, color: Colors.red)
+                  : const Icon(Icons.download, color: Colors.green),
+              title: const Text("Sedekah"),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
-                  SizedBox(
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.delete)),
+                  const SizedBox(
                     width: 10,
                   ),
-                  IconButton(onPressed: () {}, icon: Icon(Icons.edit)),
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.edit)),
                 ],
               ),
             ),

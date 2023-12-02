@@ -19,18 +19,25 @@ class _HomePageState extends State<HomePage> {
           Padding(
             padding: const EdgeInsets.all(16),
             child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.grey[800],
+                borderRadius: BorderRadius.circular(16),
+              ),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       children: [
                         Container(
-                          child: Icon(Icons.download, color: Colors.green),
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(8)),
+                          child:
+                              const Icon(Icons.download, color: Colors.green),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 15,
                         ),
                         Column(
@@ -41,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                               style: GoogleFonts.montserrat(
                                   color: Colors.white, fontSize: 12),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Text(
@@ -56,12 +63,12 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       children: [
                         Container(
-                          child: Icon(Icons.upload, color: Colors.red),
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(8)),
+                          child: const Icon(Icons.upload, color: Colors.red),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 15,
                         ),
                         Column(
@@ -72,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                               style: GoogleFonts.montserrat(
                                   color: Colors.white, fontSize: 12),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Text(
@@ -85,12 +92,6 @@ class _HomePageState extends State<HomePage> {
                       ],
                     )
                   ]),
-              width: double.infinity,
-              padding: EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Colors.grey[800],
-                borderRadius: BorderRadius.circular(16),
-              ),
             ),
           ),
           // teks transaksi
@@ -111,21 +112,23 @@ class _HomePageState extends State<HomePage> {
             child: Card(
               elevation: 10,
               child: ListTile(
-                trailing: Row(
+                trailing: const Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(Icons.delete),
-                    SizedBox(width: 10,),
+                    SizedBox(
+                      width: 10,
+                    ),
                     Icon(Icons.edit),
                   ],
                 ),
-                title: Text("Rp. 20.000"),
-                subtitle: Text("Makan Siang"),
+                title: const Text("Rp. 20.000"),
+                subtitle: const Text("Makan Siang"),
                 leading: Container(
-                  child: Icon(Icons.upload, color: Colors.red),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(8)),
+                  child: const Icon(Icons.upload, color: Colors.red),
                 ),
               ),
             ),
@@ -135,21 +138,23 @@ class _HomePageState extends State<HomePage> {
             child: Card(
               elevation: 10,
               child: ListTile(
-                trailing: Row(
+                trailing: const Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(Icons.delete),
-                    SizedBox(width: 10,),
+                    SizedBox(
+                      width: 10,
+                    ),
                     Icon(Icons.edit),
                   ],
                 ),
-                title: Text("Rp. 2.000.000"),
-                subtitle: Text("Kiriman"),
+                title: const Text("Rp. 2.000.000"),
+                subtitle: const Text("Kiriman"),
                 leading: Container(
-                  child: Icon(Icons.download, color: Colors.green),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(8)),
+                  child: const Icon(Icons.download, color: Colors.green),
                 ),
               ),
             ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ti3c_k4_ppm/pages/category_page.dart';
 import 'package:ti3c_k4_ppm/pages/home_page.dart';
+import 'package:ti3c_k4_ppm/pages/transaction_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -12,7 +13,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  final List<Widget> _children = [HomePage(), CategoryPage()];
+  final List<Widget> _children = [const HomePage(), const CategoryPage()];
   int currentIndex = 0;
 
   void onTapTapped(int index) {
@@ -31,10 +32,11 @@ class _MainPageState extends State<MainPage> {
                 backButton: false,
                 locale: 'id',
                 onDateChanged: (value) => print(value),
-                firstDate: DateTime.now().subtract(Duration(days: 365)),
+                firstDate: DateTime.now().subtract(const Duration(days: 365)),
                 lastDate: DateTime.now(),
               )
             : PreferredSize(
+                preferredSize: const Size.fromHeight(100),
                 child: Container(
                     child: Padding(
                   padding: const EdgeInsets.symmetric(
@@ -43,15 +45,24 @@ class _MainPageState extends State<MainPage> {
                   ),
                   child: Text('Categories',
                       style: GoogleFonts.montserrat(fontSize: 20)),
-                )),
-                preferredSize: Size.fromHeight(100)),
+                ))),
         //bagian paling bawah
         floatingActionButton: Visibility(
           visible: (currentIndex == 0) ? true : false,
           child: FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context)
+                  .push(
+                MaterialPageRoute(
+                  builder: (context) => const TransactionPage(),
+                ),
+              )
+                  .then((value) {
+                setState(() {});
+              });
+            },
             backgroundColor: Colors.green,
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
           ),
         ),
         body: _children[currentIndex],
@@ -63,15 +74,15 @@ class _MainPageState extends State<MainPage> {
                 onPressed: () {
                   onTapTapped(0);
                 },
-                icon: Icon(Icons.home)),
-            SizedBox(
+                icon: const Icon(Icons.home)),
+            const SizedBox(
               width: 20,
             ),
             IconButton(
                 onPressed: () {
                   onTapTapped(1);
                 },
-                icon: Icon(Icons.list))
+                icon: const Icon(Icons.list))
           ]),
         ));
   }

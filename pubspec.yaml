@@ -37,17 +37,23 @@ dependencies:
   google_fonts: ^6.1.0
   calendar_appbar: ^0.0.6
   intl: 0.17.0
+  drift: ^2.13.0
+  sqlite3_flutter_libs: ^0.5.0
+  path_provider: ^2.0.0
+  path: ^1.8.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  drift_dev: ^2.13.0
+  build_runner: ^2.4.6
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

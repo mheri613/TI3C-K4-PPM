@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ti3c_k4_ppm/models/database.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({super.key});
@@ -10,6 +11,15 @@ class CategoryPage extends StatefulWidget {
 
 class _CategoryPageState extends State<CategoryPage> {
   bool isExpense = true;
+  final AppDb database = AppDb();
+  TextEditingController categoryNameController = TextEditingController();
+  Future insert(String name, int type) async {
+    DateTime now = DateTime.now();
+    final row = await database.into(database.categories).insertReturning(
+        CategoriesCompanion.insert(
+            name: name, type: type, createdAt: now, updatedAt: now));
+    print('MASUK:'+ row.toString());
+  }
 
   void openDialog() {
     showDialog(
@@ -29,13 +39,22 @@ class _CategoryPageState extends State<CategoryPage> {
                   height: 10,
                 ),
                 TextFormField(
+                  controller: categoryNameController,
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(), hintText: "Name"),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                ElevatedButton(onPressed: () {}, child: const Text("Save"))
+                ElevatedButton(
+                    onPressed: () {
+                      insert(categoryNameController.text, isExpense ? 2 : 1);
+                      Navigator.of(context, rootNavigator: true).pop('dialog');
+                      setState(() {
+                        
+                      });
+                    },
+                    child: const Text("Save"))
               ],
             )),
           );

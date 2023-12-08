@@ -26,7 +26,14 @@ class _CategoryPageState extends State<CategoryPage> {
     return await database.getAllCategoryRepo(type);
   }
 
-  void openDialog() {
+  Future update(int categoryId, String newName) async {
+    await database.updateCategoryRepo(categoryId, newName);
+  }
+
+  void openDialog(Category? category) {
+    if (category != null) {
+      categoryNameController.text = category.name;
+    }
     showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -53,7 +60,12 @@ class _CategoryPageState extends State<CategoryPage> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      insert(categoryNameController.text, isExpense ? 2 : 1);
+                      if (category == null) {
+                        insert(categoryNameController.text, isExpense ? 2 : 1);
+                      } else {
+                        update(category.id, categoryNameController.text);
+                      }
+
                       Navigator.of(context, rootNavigator: true).pop('dialog');
                       setState(() {});
                       categoryNameController.clear();
@@ -89,7 +101,7 @@ class _CategoryPageState extends State<CategoryPage> {
               ),
               IconButton(
                   onPressed: () {
-                    openDialog();
+                    openDialog(null);
                   },
                   icon: const Icon(Icons.add))
             ],
@@ -119,14 +131,20 @@ class _CategoryPageState extends State<CategoryPage> {
                                     children: [
                                       IconButton(
                                         icon: Icon(Icons.delete),
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          database.deleteCategoryRepo(
+                                              snapshot.data![index].id);
+                                          setState(() {});
+                                        },
                                       ),
                                       SizedBox(
                                         width: 10,
                                       ),
                                       IconButton(
                                         icon: Icon(Icons.edit),
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          openDialog(snapshot.data![index]);
+                                        },
                                       )
                                     ],
                                   ),
@@ -136,7 +154,7 @@ class _CategoryPageState extends State<CategoryPage> {
                                           color: Colors.white,
                                           borderRadius:
                                               BorderRadius.circular(8)),
-                                      child: (isExpense!)
+                                      child: (isExpense)
                                           ? Icon(Icons.upload,
                                               color: Colors.redAccent[400])
                                           : Icon(

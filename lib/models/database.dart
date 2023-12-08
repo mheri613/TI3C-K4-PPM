@@ -21,6 +21,7 @@ class AppDb extends _$AppDb {
   @override
   int get schemaVersion => 6;
 
+
   // CRUD Category
   Future<List<Category>> getAllCategoryRepo(int type) async {
     return await (select(categories)..where((tbl) => tbl.type.equals(type)))

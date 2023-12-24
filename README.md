@@ -8,7 +8,7 @@
         <ul class="members">
             <li>Anggota 1: Sahli Kurniawan</li>
             <li>Anggota 2: Mazaia Ulfa</li>
-            <li>Anggota 2: Mulkiani</li>
+            <li>Anggota 3: Mulkiani</li>
             <!-- Tambahkan anggota lainnya sesuai kebutuhan -->
         </ul>
     </div>
